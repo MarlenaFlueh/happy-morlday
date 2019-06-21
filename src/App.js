@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './App.css'
-const url = "https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles"
+const url = "https://capitol-lueneburg.de/restaurant-fruehstueck-cocktails/"
 
 class App extends Component {
 
@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   componentDidUpdate = async () => {
-    const word = 'Hello World hello world.'
+    const word = 'Happy Birthday Morl! Ich lade dich zum Frühstück ein, und zwar im...'
     const list = word.split('')
 
     if (word.length > this.state.counter) {
@@ -27,7 +27,7 @@ class App extends Component {
       await setTimeout(() => {
         
       }, 1000);
-      //window.open(url,"_self")
+      window.open(url,"_self")
     }
   }
 
