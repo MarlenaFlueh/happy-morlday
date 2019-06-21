@@ -1,20 +1,15 @@
-import React, {Component} from 'react'
+import React from 'react'
 import './App.css'
 import { delay } from 'q';
 const url = "https://capitol-lueneburg.de/restaurant-fruehstueck-cocktails/"
 
-class App extends Component {
+class App extends React.Component {
 
   state = {
     name: ''
   }
 
-  componentDidMount = () => {
-    this.setState({name: ''})
-    this.addChars()
-  }
-
-  addChars = async () => {
+  componentDidMount = async () => {
     const word = 'Happy Birthday Morl!\n Mein Geschenk: Frühstücken :)\n Und wo?...'
     const list = word.split('')
 
