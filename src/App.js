@@ -14,14 +14,20 @@ class App extends Component {
   }
 
   componentDidUpdate = async () => {
-    const word = 'Happy Birthday Morl! Ich lade dich zum Frühstück ein, und zwar im...'
+    const word = 'Happy Birthday Morl!\n Mein Geschenk: Frühstücken :)\n Und wo?...'
     const list = word.split('')
 
     if (word.length > this.state.counter) {
-      await setTimeout(() => {
-        const index = this.state.counter
-        this.setState({name: this.state.name + list[index], counter: this.state.counter + 1})
-      }, 300);
+      const index = this.state.counter
+      if (list[index - 1] === '!' || list[index - 1] === ')' || list[index - 1] === '?') {
+        await setTimeout(() => {
+          this.setState({name: this.state.name + list[index], counter: this.state.counter + 1})
+        }, 1200);
+      } else {
+        await setTimeout(() => {
+          this.setState({name: this.state.name + list[index], counter: this.state.counter + 1})
+        }, 150);
+      }
       
     } else {
       await setTimeout(() => {
