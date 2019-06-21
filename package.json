@@ -1,11 +1,14 @@
 {
   "name": "happy-morlday",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -13,9 +16,17 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarlenaFlueh/happy-morlday.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarlenaFlueh/happy-morlday/issues"
+  },
+  "homepage": "https://github.com/MarlenaFlueh/happy-morlday#readme",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -27,11 +38,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "devDependencies": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
