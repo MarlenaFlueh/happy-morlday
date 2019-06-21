@@ -1,40 +1,35 @@
 import React, {Component} from 'react'
 import './App.css'
+import { delay } from 'q';
 const url = "https://capitol-lueneburg.de/restaurant-fruehstueck-cocktails/"
 
 class App extends Component {
 
   state = {
-    name: '',
-    counter: 0
+    name: ''
   }
 
   componentDidMount = () => {
     this.setState({name: ''})
+    this.addChars()
   }
 
-  componentDidUpdate = async () => {
+  addChars = async () => {
     const word = 'Happy Birthday Morl!\n Mein Geschenk: Frühstücken :)\n Und wo?...'
     const list = word.split('')
 
-    if (word.length > this.state.counter) {
-      const index = this.state.counter
-      if (list[index - 1] === '!' || list[index - 1] === ')' || list[index - 1] === '?') {
-        await setTimeout(() => {
-          this.setState({name: this.state.name + list[index], counter: this.state.counter + 1})
-        }, 1200);
+    for (let i = 0; i < word.length; i++) {
+      if (list[i - 1] === '!' || list[i - 1] === ')' || list[i - 1] === '?') {
+        await delay(1200)
+        this.setState({name: this.state.name + list[i]})
+       
       } else {
-        await setTimeout(() => {
-          this.setState({name: this.state.name + list[index], counter: this.state.counter + 1})
-        }, 150);
+        await delay(150)
+        this.setState({name: this.state.name + list[i]})
       }
       
-    } else {
-      await setTimeout(() => {
-        
-      }, 1000);
-      window.open(url,"_self")
     }
+    await window.open(url,"_self")
   }
 
   render() {
