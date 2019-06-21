@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import './App.css'
+const url = "https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  state = {
+    name: '',
+    counter: 0
+  }
+
+  componentDidMount = () => {
+    this.setState({name: ''})
+  }
+
+  componentDidUpdate = async () => {
+    const word = 'Hello World hello world.'
+    const list = word.split('')
+
+    if (word.length > this.state.counter) {
+      await setTimeout(() => {
+        const index = this.state.counter
+        this.setState({name: this.state.name + list[index], counter: this.state.counter + 1})
+      }, 300);
+      
+    } else {
+      await setTimeout(() => {
+        
+      }, 1000);
+      //window.open(url,"_self")
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <div className="image"></div>
+          <h1>
+          {this.state.name}
+          </h1>
+        </header>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App

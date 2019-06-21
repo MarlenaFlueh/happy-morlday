@@ -9,14 +9,19 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 15%;
+  background-color: #282c34;
+  background-size: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background-image: url("./assets/cake5.svg");
 }
 
 .App-link {
