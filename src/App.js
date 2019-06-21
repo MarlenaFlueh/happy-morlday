@@ -9,7 +9,7 @@ class App extends React.Component {
     name: ''
   }
 
-  componentDidMount = async () => {
+  async componentDidMount() {
     const word = 'Happy Birthday Morl!\n Mein Geschenk: Frühstücken :)\n Und wo?...'
     const list = word.split('')
 
